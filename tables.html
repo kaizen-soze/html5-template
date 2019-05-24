@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>table element</title>
+  <meta name="author" content="kaizen-soze">
+</head>
+
+<body>
+  <!-- Technically you shouldn't use the border attribute to style a table; you should be using CSS. -->
+  <table border="1">
+    <thead>
+        <tr>
+            <th colspan="5">This is a table with five columns</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <br />
+  <br />
+
+  <table border="1">
+    <thead>
+        <tr>
+            <th colspan="3">This is a table with three columns</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <br />
+  <br />
+
+  <table border="1">
+    <thead>
+        <tr>
+            <th colspan="3">This is a nested table; outer level</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <table border="1">
+                <thead>
+                    <tr>
+                        <th colspan="3">This is a nested table; inner level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tables</td>
+                    </tr>
+                </tbody>
+              </table>
+            </td>
+            <td><table border="1">
+                <thead>
+                    <tr>
+                        <th colspan="3">This is a nested table; inner level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Within</td>
+                    </tr>
+                </tbody>
+              </table></td>
+            <td>
+              <table border="1">
+                <thead>
+                    <tr>
+                        <th colspan="3">This is a nested table; inner level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tables</td>
+                    </tr>
+                </tbody>
+              </table>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</body>
+</html>
