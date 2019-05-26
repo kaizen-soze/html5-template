@@ -1,0 +1,38 @@
+#the-body {
+	background-color: #d8d8d8;
+  width: 80%;
+}
+
+#intro {
+  color: #44a8ff;
+  padding: 10px;
+}
+
+.space {
+  margin-bottom: 20px;
+  padding: 80px;
+}
+
+.black-bg {
+  background-color: #000;
+}
+
+.white-bg {
+  background-color: #fff;
+}
+
+.purple-bg {
+  background-color: MediumPurple;
+}
+
+.green-bg {
+  background-color: MediumSpringGreen;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: black;
+}

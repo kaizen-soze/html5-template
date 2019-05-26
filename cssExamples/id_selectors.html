@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Examples</title>
+  <meta name="description" content="This page contains the essentials for a modern HTML5 web page">
+  <meta name="author" content="kaizen-soze">
+  <style>
+  	
+    #the-body {
+  		background-color: #d8d8d8;
+      width: 80%;
+  	}
+
+    #intro {
+      color: #44a8ff;
+      padding: 10px;
+    }
+
+    #gator {
+      background-color: #0063ba;
+      border-style: solid;
+      border-color: orange;
+      border-width: 2px;
+      margin-left: 20px;
+      color: white;
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+      padding: 100px;
+    }
+
+    #not-gator {
+      background-color: #00ba34;
+      border-style: solid;
+      border-color: orange;
+      border-width: 2px;
+      margin-left: 20px;
+      color: white;
+      font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+      padding: 100px;
+    }
+
+    .extra-bottom {
+      margin-bottom: 30px;
+    }
+
+    .emphasis-color {
+      color: red;
+    }
+
+    .emphasis-weight {
+      font-weight: bold;
+    }
+  </style>
+
+</head>
+
+<body id="the-body">
+  <h1 id="intro">ID Selectors</h1>
+  <div id="gator" class="extra-bottom">
+    If you <span class="emphasis-color emphasis-weight">look</span> at the code for this page (right-click and choose "View Source"), you'll see
+    that some HTML elements have an <span class="emphasis-color emphasis-weight">ID</span> associated with it, and those properties are defined in the &lt;style&gt; section at the top of the document. Also notice that a selector can have an ID and a Class at the same time.
+  </div>
+  <div id="not-gator">
+    You can easily change the appearance of this page by <span class="emphasis-color emphasis-weight">tweaking</span> the CSS values at the top of this document,
+    saving, and reloading the page.
+  </div>
+</body>
+</html>
