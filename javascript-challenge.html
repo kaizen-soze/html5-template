@@ -30,10 +30,14 @@
   <p>If you get stuck, please reach out to Ben for hints and help!</p>
   
   <script>
-    // Hint!
-    const x = 17
-    console.log('To mix variables in with your string, use the backtick in the console command instead of single quotes')
-    console.log(`The value of x: ${x}`)
+    function timesTables(x) {
+        for (i = 0; i <= 100; i++) {
+            const total = x * i
+            console.log(`${x} * ${i} = ${total}`)
+        }
+    }
+
+    timesTables(5)
   </script>
 </body>
 </html>
