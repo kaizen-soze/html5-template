@@ -1,92 +1,130 @@
 <!doctype html>
-
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>My HTML5 Web Site</title>
-  <meta name="description" content="This page contains the essentials for a modern HTML5 web page">
-  <meta name="author" content="kaizen-soze">
-  <style>
-  	.red {
-  		background-color: red;
-  	}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This page contains the essentials for a modern HTML5 web page">
+    <meta name="author" content="kaizen-soze">
 
-    .bold {
-      font-weight: bold;
-    }
-  </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-</head>
+    <title>My Bootstrap Website</title>
+  </head>
+  <body>
+      <div class="container">
+        <h1>HTML5 Template</h1>
+      <hr>
 
-<body>
-  <h1>HTML5 Template</h1>
-  <hr>
-  
-  <h3>HTML Tags</h3>
-  <p>
-    <ul>
-      <li><a href="a.html">&lt;a&gt; element</a></li>
-      <li><a href="br.html">&lt;br /&gt; element</a></li>
-      <li><a href="comments.html">HTML Comments</a></li>
-      <li><a href="h.html">Header elements</a></li>
-      <li><a href="hr.html">&lt;hr &gt; element</a></li>
-      <li><a href="img.html">&lt;img /&gt; element</a></li>
-      <li><a href="ol.html">&lt;ol &gt; element</a></li>
-      <li><a href="p.html">&lt;p &gt; element</a></li>
-      <li><a href="spandiv.html">&lt;span &gt; &amp; &lt;div &gt; elements</a></li>
-      <li><a href="tables.html">&lt;table &gt; element</a></li>
-      <li><a href="ul.html">&lt;ul &gt; element</a></li>
-    </ul>
-  </p>
+      <div class="accordion" id="accordionExample">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h2 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  HTML Tags
+                </button>
+              </h2>
+            </div>
+        
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+              <div class="card-body">
+                  <ul>
+                    <li><a href="a.html">&lt;a&gt; element</a></li>
+                    <li><a href="br.html">&lt;br /&gt; element</a></li>
+                    <li><a href="comments.html">HTML Comments</a></li>
+                    <li><a href="h.html">Header elements</a></li>
+                    <li><a href="hr.html">&lt;hr &gt; element</a></li>
+                    <li><a href="img.html">&lt;img /&gt; element</a></li>
+                    <li><a href="ol.html">&lt;ol &gt; element</a></li>
+                    <li><a href="p.html">&lt;p &gt; element</a></li>
+                    <li><a href="spandiv.html">&lt;span &gt; &amp; &lt;div &gt; elements</a></li>
+                    <li><a href="tables.html">&lt;table &gt; element</a></li>
+                    <li><a href="ul.html">&lt;ul &gt; element</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  CSS
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+              <div class="card-body">
+                  <p class="lead">Selectors</p>
+                  <ul>
+                    <!-- Notice that the links below all have "cssExamples" in their address. This is because
+                    the css files live in a folder called "cssExamples". A link simply points to a real
+                    location, so since those html files live in a folder, we need to include that folder when
+                    we're referring to it.
+          
+                    This is called a relative link because we don't specify a domain name.  -->
+                    <li><a href="cssExamples/html_selectors.html">HTML Selectors</a></li>
+                    <li><a href="cssExamples/class_selectors.html">Class Selectors</a></li>
+                    <li><a href="cssExamples/id_selectors.html">ID Selectors</a></li>
+                  </ul>
+          
+                  <p class="lead">Different Types of Stylesheets</p>
+                  <p>Remember that this is the order in which stylesheets are interpreted and applied!</p>
+                  <ol>
+                    <li><a href="cssExamples/external-css.html">External Stylesheet</a></li>
+                    <li><a href="cssExamples/margin.html">Internal Stylesheet</a></li>
+                    <li><a href="cssExamples/inline-css.html">Inline Styles</a></li>
+                  </ol>
+                  
+                  <p class="lead">Properties</p>
+                  <ul>
+                    <li><a href="cssExamples/margin.html">margin</a></li>
+                    <li><a href="cssExamples/padding.html">padding</a></li>
+                    <li><a href="cssExamples/font-weight.html">font-weight</a></li>
+                    <li><a href="cssExamples/font-size.html">font-size</a></li>
+                    <li><a href="cssExamples/font-family.html">font-family</a></li>
+                    <li><a href="cssExamples/color.html">color</a></li>
+                    <li><a href="cssExamples/background-color.html">background-color</a></li>
+                    <li><a href="cssExamples/width.html">width</a></li>
+                    <li><a href="cssExamples/height.html">height</a></li>
+                  </ul>
+          
+                  <p><a href="cssExamples/css-layout.html">CSS Layout Challenge</a></p>
+          
+                  <p class="lead">CSS Grid</p>
+                  <ul>
+                    <li><a href="cssExamples/css-grid.html">CSS Grid</a></li>
+                    <li><a href="cssExamples/css-grid-semantic.html">CSS Grid with Semantic tags</a></li>
+                    <li><a href="cssExamples/css-grid-semantic2.html">CSS Grid using Grid Area</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Javascript
+                </button>
+              </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+              <div class="card-body">
+                <p class="lead">Javascript Demos</p>
+                <a href="javascript/object.html">Intro to objects</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
 
-  <h3>CSS</h3>
-  <div>
-    <p class="bold">Selectors</p>
-    <ul>
-      <!-- Notice that the links below all have "cssExamples" in their address. This is because
-      the css files live in a folder called "cssExamples". A link simply points to a real
-      location, so since those html files live in a folder, we need to include that folder when
-      we're referring to it.
-
-      This is called a relative link because we don't specify a domain name.  -->
-      <li><a href="cssExamples/html_selectors.html">HTML Selectors</a></li>
-      <li><a href="cssExamples/class_selectors.html">Class Selectors</a></li>
-      <li><a href="cssExamples/id_selectors.html">ID Selectors</a></li>
-    </ul>
-
-    <p class="bold">Different Types of Stylesheets</p>
-    <p>Remember that this is the order in which stylesheets are interpreted and applied!</p>
-    <ol>
-      <li><a href="cssExamples/external-css.html">External Stylesheet</a></li>
-      <li><a href="cssExamples/margin.html">Internal Stylesheet</a></li>
-      <li><a href="cssExamples/inline-css.html">Inline Styles</a></li>
-    </ol>
-    
-    <p class="bold">Properties</p>
-    <ul>
-      <li><a href="cssExamples/margin.html">margin</a></li>
-      <li><a href="cssExamples/padding.html">padding</a></li>
-      <li><a href="cssExamples/font-weight.html">font-weight</a></li>
-      <li><a href="cssExamples/font-size.html">font-size</a></li>
-      <li><a href="cssExamples/font-family.html">font-family</a></li>
-      <li><a href="cssExamples/color.html">color</a></li>
-      <li><a href="cssExamples/background-color.html">background-color</a></li>
-      <li><a href="cssExamples/width.html">width</a></li>
-      <li><a href="cssExamples/height.html">height</a></li>
-    </ul>
-
-    <p><a href="cssExamples/css-layout.html">CSS Layout Challenge</a></p>
-
-    <p class="bold">CSS Grid</p>
-    <ul>
-      <li><a href="cssExamples/css-grid.html">CSS Grid</a></li>
-      <li><a href="cssExamples/css-grid-semantic.html">CSS Grid with Semantic tags</a></li>
-      <li><a href="cssExamples/css-grid-semantic2.html">CSS Grid using Grid Area</a></li>
-    </ul>
-  </div>
-  
-  <script>
-  	console.log('Javascript is working!')
-  </script>
-</body>
+    <!-- Optional JavaScript -->
+    <script>
+      console.log('Javascript is working!')
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
 </html>

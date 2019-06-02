@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This page contains the essentials for a modern HTML5 web page">
+    <meta name="author" content="kaizen-soze">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>My Bootstrap Website</title>
+  </head>
+  <body>
+      <div class="container">
+        <h1>Javascript Object Demo</h1>
+        <p class="lead">
+            View the source for this page to see a demonstration of how objects work.
+        </p>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <script>
+      // Javascript objects are defined by using curly brackets.
+      devAcademy = {
+          // You can add properties, which simply contain a variable.
+          courseName: 'Intro to Web Development',
+          students: ['Cara', 'Mia', 'Jack'],
+          instructor: 'Ben',
+          // You can add methods
+          courseInfo: function() {
+            // The 'this' keyword tells javascript to look at the current object.
+            // Using this.instructor means to look for an instructor property on the current object.
+            console.log(`${this.instructor} is the instructor for ${this.courseName}`)
+            console.log(`There are ${this.students.length} students registered for the course.`)
+          },
+          listStudents: function() {
+            console.log('Students:')
+            for (let x = 0; x < this.students.length; x++) {
+              console.log(this.students[x])
+            }
+          }
+      }
+      
+      // To execute the method, call it via dot notation.
+      devAcademy.courseInfo()
+      devAcademy.listStudents()
+
+      // To access a property, call it via dot notation.
+      console.log(devAcademy.instructor)
+
+      // You can also use bracket notation
+      console.log(`Using bracket notation: ${devAcademy['instructor']}`)
+
+      // Properties can be added outside of the initial declaration with bracket notation
+      devAcademy['classroom'] = 50
+      console.log(devAcademy['classroom'])
+
+      // Properties can also be added and accessed with dot notation
+      devAcademy.tv = true
+      console.log(`Classroom ${devAcademy.classroom} has a television: ${devAcademy.tv}`)
+
+      // Use whatever you like, but be consistent!
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
