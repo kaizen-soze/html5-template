@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This page contains the essentials for a modern HTML5 web page">
+    <meta name="author" content="kaizen-soze">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Local Storage</title>
+  </head>
+  <body>
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Local Storage</li>
+        </ol>
+      </nav>
+      <h1>Local Storage</h1>
+      <p class="lead">
+          Local storage retains information permanently. It persists even after closing the browser.
+      </p>
+      <form id="storageForm">
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col">
+          <textarea class="form-control" name="myTextArea" placeholder="Type something here"></textarea>            
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: 20px;">
+        <div class="col" id="status">&nbsp;</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <!-- If this were a real submit button, its type would be "submit" -->
+          <button type="button" class="btn btn-primary" id="fakeSubmit">Submit</button>
+        </div>
+        <div class="col" id="formStatus">
+          &nbsp;
+        </div>
+      </div>
+      </form>
+    </div>
+
+    <script>
+      // Create a reference to the button
+      const button = document.getElementById('fakeSubmit')
+
+      // Create a reference to our input fields so we don't have to keep
+      // retrieving it when the button is clicked.
+      const input = document.getElementById('storageForm')
+
+      // Check localStorage for data
+      // https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+      let storageData = localStorage.getItem('storageForm')
+
+      if (storageData) {
+        input['myTextArea'].value = storageData
+      }
+
+      // Create an event listener for the button
+      button.addEventListener('click', event => {
+        const textContent = input['myTextArea'].value
+        const formStatus = document.getElementById('formStatus')
+
+        if (textContent !== storageData) {
+          formStatus.textContent = 'Local Storage updated!'
+          localStorage.setItem('storageForm', textContent);
+        }
+      })
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
