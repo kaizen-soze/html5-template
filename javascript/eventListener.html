@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="This page contains the essentials for a modern HTML5 web page">
+    <meta name="author" content="kaizen-soze">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Event Listeners</title>
+  </head>
+  <body>
+    <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Event Listeners</li>
+          </ol>
+        </nav>
+        <h1>Javascript Query Selectors</h1>
+        <p class="lead">
+            This page uses an event listener, which simplifies our code.
+        </p>
+        <div class="row">
+          <div class="col-sm" id="one">
+              #one
+          </div>
+          <div class="col-sm" id="two">
+              #two
+          </div>
+          <div class="col-sm" id="three">
+              #three
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+          <div class="col-sm" id="four">
+              #four
+          </div>
+          <div class="col-sm" id="five">
+              #five
+          </div>
+          <div class="col-sm" id="six">
+              #six
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm" id="seven">
+                #seven
+            </div>
+            <div class="col-sm" id="eight">
+                #eight
+            </div>
+            <div class="col-sm" id="nine">
+                #nine
+            </div>
+          </div>
+      </div>
+
+    <script>
+      // When the page loads, let's add a click event listener to each cell of our layout.
+      const divs = document.getElementsByClassName('col-sm')
+
+      // There are nine cells in our grid, so we've created nine event listeners by using a loop.
+      // Once an event happens on one of the elements with a listener, the code we've defined
+      // inside the listener runs.
+      for (i = 0; i < divs.length; i++) {
+          // Assigning divs[i] to currentDiv isn't strictly necessary, but it
+          // increases readability.
+          const currentDiv = divs[i]
+          currentDiv.addEventListener('click', event => {
+            // Once a click is detected, reset the background color for all divs
+            resetColors()
+            currentDiv.classList.add('bg-danger')
+
+            // Change the text inside the div
+            // https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
+            currentDiv.textContent = 'CLICKED!'
+          })
+      }
+
+      // This method resets the background colors for all the cells in our layout
+      function resetColors() {
+        // There's no need to define divs again because it's already defined when we load the page.
+        // Remember that a child method can access variables that are defined as part of the
+        // parent scope. Since we're not redefining it over and over, our code is faster and
+        // more efficient.
+
+        // The documentation for HTMLCollection says that it has a length property,
+        // so let's use a for loop to iterate over everything.
+        for (i = 0; i < divs.length; i++) {
+            const currentDiv = divs[i]
+            currentDiv.classList.remove('bg-danger')
+
+            // We need to reset the text inside the div, so we should fetch the ID
+            // and then set the text based on that
+            const divID = currentDiv.getAttribute('id')
+            currentDiv.textContent = `#${divID}`
+
+        }
+      }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
