@@ -35,7 +35,91 @@
 
     <!-- Optional JavaScript -->
     <script>
-      console.log('Javascript is working!')
+      
+
+      const years = [1980, 1985, 2019, 1992, 1989, 1215, 2012]
+      
+      // Write a function that finds the largest value in
+      // a numeric array and outputs it to the console.
+      function findLargestNumber(numberArray) {
+        // Sort the array, pop largest value off the end
+        numberArray.sort()
+        const lastIndex = numberArray.length - 1
+        const largestNumber = numberArray[lastIndex]
+
+        // Return value
+        return largestNumber
+      }
+
+      // const largestYear = findLargestNumber(years)
+      
+      // console.log(`For the years: ${years}`)
+      // console.log(`The largest year is ${largestYear}`)
+
+      // Write a function that counts from 1 - 100 and
+      // echoes “BEEP” when it encounters multiples of 3 and 5.
+      function beeper() {
+        // Start counting with a loop from starting number
+        // to ending number
+        for (let i = 1; i <= 100; i++) {
+          // Print the current number to the console
+
+          // Check to see if number is divisible by 3 or 5
+          // If so, echo BEEP
+          if (i % 3 == 0 || i % 5 == 0) {
+            console.log(`${i} BEEP`)
+          } else {
+            console.log(i)
+          }
+        }
+      }
+
+      // beeper()
+
+      // Write a function that finds the sum of all
+      // values when given an array of numbers
+      const arrayOfNumbers = [42, 15, 27, 47, 2357, 898, 5]
+
+      function summarizer(targetNumbers) {
+        // declare a sum variable, set to 0
+        let sum = 0
+
+        // for each value, add the current value
+        // to the previous value (the sum variable)
+        targetNumbers.forEach(function(position) {
+          sum += position
+        })
+
+        // Return the sum
+        return sum
+      }
+
+      // const result = summarizer(arrayOfNumbers)
+      // console.log(`The sum of ${arrayOfNumbers} is ${result}`)
+
+      // Write a tip calculator that finds a 10%, 15%, and 20%
+      // tip for a given value. Write the values to an array.
+      const myTotal = 232
+
+      function tipCalculator(targetTotal) {
+        const tipOptions = [.1, .15, .2]
+        const results = []
+
+        tipOptions.forEach(function(rate) {
+          let tip = targetTotal * rate
+          results.push(tip.toFixed(2))
+        })
+
+        return results
+      }
+
+      const calculatedTips = tipCalculator(myTotal)
+
+      console.log(`Your total is $${myTotal}`)
+      console.log(`Suggested tip 10% = $${calculatedTips[0]}`)
+      console.log(`Suggested tip 15% = $${calculatedTips[1]}`)
+      console.log(`Suggested tip 20% = $${calculatedTips[2]}`)
+
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
