@@ -29,13 +29,61 @@
           <li>Once the button is clicked, the counter should increment by 1</li>
           <li>Every 10 clicks, change the background color of the button to one of bootstrap’s available button colors. Don’t use the same color twice in a row.</li>
         </ol>
-        
-
+        <div class="row">
+          <div class="col-sm">
+              
+          </div>
+          <div class="col-sm text-center">
+              <button type="button" class="btn btn-primary" id="changeColor">CLICK ME!</button>
+              <h1 id="clickDisplay">Number of Clicks: 0</h1>  
+          </div>
+          <div class="col-sm">
+              
+          </div>
+        </div>
       </div>
 
     <!-- Optional JavaScript -->
     <script>
-      console.log('Javascript is working!')
+      let count = 0
+      let colorIndex = 0
+
+      // Designate color array for bootstrap buttons. We want to
+      // iterate over this list to change the colors once the counter
+      // is divisible by 10
+      const colors = [
+        'btn-primary',
+        'btn-secondary',
+        'btn-success',
+        'btn-danger',
+        'btn-warning',
+        'btn-info',
+        'btn-light',
+        'btn-dark',
+      ]
+
+      const button = document.getElementById('changeColor')
+      // This event listener exists to increment the count
+      // and display the updated click count upon each click
+      button.addEventListener('click', event => {
+        count++
+
+        const clickDisplay = document.getElementById('clickDisplay')
+        clickDisplay.textContent = `Number of Clicks: ${count}`
+
+        // When we click our button and it's divisible by 10,
+        // change the color of the button based on the array index
+        if (count % 10 == 0) {
+          // Remove the current color
+          button.classList.remove(colors[colorIndex])
+          
+          // Increment our index (but reset to 0 if we go over the .lenth property)
+          colorIndex = (colorIndex == colors.length - 1) ? 0 : colorIndex + 1
+
+          // Add the new color
+          button.classList.add(colors[colorIndex])
+        }
+      })
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
