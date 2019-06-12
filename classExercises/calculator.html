@@ -66,7 +66,7 @@
           </div>
           <div class="row form-group">
               <div class="col-3">
-                <button type="button" class="btn btn-info btn-lg btn-block">1</button>
+                <button type="button" name="one" class="btn btn-info btn-lg btn-block">1</button>
               </div>
               <div class="col-3">
                 <button type="button" class="btn btn-info btn-lg btn-block">2</button>
@@ -103,7 +103,21 @@
 
     <!-- Optional JavaScript -->
     <script>
-      console.log('Javascript is working!')
+      // Problems to solve:
+      // 1. Memory for the numbers
+      // 2. Make buttons interactive
+      //    a. Identify buttons
+      //      i. Have an event listener
+      //      ii. Have one array to identify action buttons
+      //      iii. Read the value attribute of the form element that was clicked, and determin
+      //           if it's a numeric value
+      //      iv. Based on whether it's a number or action, call the number or action method
+      //    b. Each button needs value or action
+      //      i. Number buttons (0 - 9)
+      //      ii. Action buttons (. + - x / = AC)
+      //    c. Define how buttons affect display, memory
+      // 3. Make display interactive
+
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
