@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Counter</title>
+    <title>Calculator</title>
   </head>
   <body>
       <div class="container">
@@ -33,68 +33,68 @@
                   class="form-control text-right form-control-lg"
                   id="calcDisplay"
                   placeholder="0"
-                  readonly>
+                  >
             </div>
           </div>
           <div class="row form-group">
             <div class="col-3">
-              <button type="button" class="btn btn-info btn-lg btn-block">7</button>
+              <button type="button" class="btn btn-info btn-lg btn-block" value="7">7</button>
             </div>
             <div class="col-3">
-              <button type="button" class="btn btn-info btn-lg btn-block">8</button>
+              <button type="button" class="btn btn-info btn-lg btn-block" value="8">8</button>
             </div>
             <div class="col-3">
-              <button type="button" class="btn btn-info btn-lg btn-block">9</button>
+              <button type="button" class="btn btn-info btn-lg btn-block" value="9">9</button>
             </div>
             <div class="col-3">
-              <button type="button" class="btn btn-secondary btn-lg btn-block">+</button>
+              <button type="button" class="btn btn-secondary btn-lg btn-block" value="plus">+</button>
             </div>
           </div>
           <div class="row form-group">
-              <div class="col-3">
-                <button type="button" class="btn btn-info btn-lg btn-block">4</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn btn-info btn-lg btn-block">5</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn btn-info btn-lg btn-block">6</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn btn-secondary btn-lg btn-block">-</button>
-              </div>
-          </div>
-          <div class="row form-group">
-              <div class="col-3">
-                <button type="button" name="one" class="btn btn-info btn-lg btn-block">1</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn btn-info btn-lg btn-block">2</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn btn-info btn-lg btn-block">3</button>
-              </div>
-              <div class="col-3">
-                <button type="button" class="btn btn-secondary btn-lg btn-block">x</button>
-              </div>
-          </div>
-          <div class="row form-group">
-            <div class="col-6">
-              <button type="button" class="btn btn-info btn-lg btn-block">0</button>
+            <div class="col-3">
+              <button type="button" class="btn btn-info btn-lg btn-block" value="4">4</button>
             </div>
             <div class="col-3">
-              <button type="button" class="btn btn-secondary btn-lg btn-block">.</button>
+              <button type="button" class="btn btn-info btn-lg btn-block" value="5">5</button>
             </div>
             <div class="col-3">
-              <button type="button" class="btn btn-secondary btn-lg btn-block">/</button>
+              <button type="button" class="btn btn-info btn-lg btn-block" value="6">6</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-secondary btn-lg btn-block" value="minus">-</button>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-3">
+              <button type="button" class="btn btn-info btn-lg btn-block" value="1">1</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-info btn-lg btn-block" value="2">2</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-info btn-lg btn-block" value="3">3</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-secondary btn-lg btn-block" value="multiply">x</button>
             </div>
           </div>
           <div class="row form-group">
             <div class="col-6">
-              <button type="button" class="btn btn-danger btn-lg btn-block">AC</button>
+              <button type="button" class="btn btn-info btn-lg btn-block" value="0">0</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-secondary btn-lg btn-block" value="decimal">.</button>
+            </div>
+            <div class="col-3">
+              <button type="button" class="btn btn-secondary btn-lg btn-block" value="divide">&#247;</button>
+            </div>
+          </div>
+          <div class="row form-group">
+            <div class="col-6">
+              <button type="button" class="btn btn-danger btn-lg btn-block" value="all-clear">AC</button>
             </div>
             <div class="col-6">
-              <button type="button" class="btn btn-success btn-lg btn-block">=</button>
+              <button type="button" class="btn btn-success btn-lg btn-block" value="equals">=</button>
             </div>
           </div>
         </form>
@@ -103,20 +103,83 @@
 
     <!-- Optional JavaScript -->
     <script>
+      // Make event listener for each button
+      const buttons = document.getElementsByClassName('btn')
+      const display = document.getElementById('calcDisplay')
+      display.value = '0'
+
+      const workingArray = []
+      const characters = {
+        'plus': '+',
+        'minus': '-',
+        'multiply': 'x',
+        'divide': '&#247;'
+      }
+
+      function updateDisplay(input) {
+        const isNumber = input.length === 1
+        const displayValue = new Number(display.value)
+        const displayHasNumber = Number.isInteger(display.value / 1)
+
+        console.log(`You pressed ${input}`)
+        console.log(`display.value: ${display.value}`)
+        console.log(`display.value is a number: ${displayHasNumber}`)
+        
+        // If we have a number AND there is no current value in the display:
+        // Display value of input
+        if (isNumber && displayValue == 0) {
+          display.value = input
+        }
+        
+        // If we have a number AND there is a value AND the value is a number:
+        // Add input to the value of display (CONCATENATE)
+        if (isNumber && displayValue != 0 && displayHasNumber) {
+          display.value = display.value + input
+        }
+        
+        // If we have an operation, clear the display and show our operation
+        if (isNumber === false && displayHasNumber === false) {
+          display.value = null
+          display.value = characters[input]
+        }          
+      }
+
+      for (i = 0; i < buttons.length; i++) {
+        const currentButton = buttons[i]
+        currentButton.addEventListener('click', event => {
+          // Figure out the button that was clicked
+          const input = currentButton.value
+          const isNumber = input.length === 1
+          updateDisplay(input)
+
+          // Add the action to the working numbers array as well.
+          // Also update the screen to show the action
+          //    If equals, run method to find final total
+          //    If AC, delete working numbers array and update display
+          //    If decimal point, update the existing number on the screen
+          workingArray.push(display.value, input)
+                 
+        })
+      }
+
       // Problems to solve:
       // 1. Memory for the numbers
       // 2. Make buttons interactive
       //    a. Identify buttons
       //      i. Have an event listener
       //      ii. Have one array to identify action buttons
-      //      iii. Read the value attribute of the form element that was clicked, and determin
+      //      iii. Read the value attribute of the form element that was clicked, and determine
       //           if it's a numeric value
       //      iv. Based on whether it's a number or action, call the number or action method
       //    b. Each button needs value or action
       //      i. Number buttons (0 - 9)
       //      ii. Action buttons (. + - x / = AC)
       //    c. Define how buttons affect display, memory
+      //      i. Have a method that runs when the = key is pressed. Iterate over an array
+      //         containing your numbers and operations. Have a method for each operation.
+      //         Call methods for each action as we iterate over the loop.
       // 3. Make display interactive
+      //  a. This is just a string that's updated every key press
 
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
