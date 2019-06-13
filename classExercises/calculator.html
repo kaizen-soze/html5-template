@@ -142,50 +142,16 @@
 
         // If we have an operation, clear the display and show our operation
         if (isNumber === false) {
-          switch (input) {
-            case dot:
-              // If decimal point, update the existing number on the screen
-              display.value = display.value + '.'
-            break
-            case ac:
-              display.value = 0
-            break
-            case equals:
-              display.value = '='
-            break;
-            default:
-              display.value = null
-              display.value = characters[input]
-            break
-          }
+          // Handle the operations here
+          display.value = `TODO: ADD SUPPORT FOR ${input} CHARACTER`
         }  
       }
 
       // Parse workingArray and perform calculations
       function findTotal() {
-        // Set running total to the first number
-        let runningTotal = workingArray[0]
+        let runningTotal = 0
 
-        // Since we access the next index on every loop, it would be
-        // useless to increment our index one at a time. Instead, we
-        // increment by two.
-        for (let i = 1; i < workingArray.length; i = i + 2) {
-          nextIndex = i + 1
-          switch (workingArray[i]) {
-            case 'plus':
-              runningTotal = runningTotal + workingArray[nextIndex]
-            break
-            case 'minus':
-              runningTotal = runningTotal - workingArray[nextIndex]
-            break
-            case 'multiply':
-              runningTotal = runningTotal * workingArray[nextIndex]
-            break;
-            case 'divide':
-              runningTotal = runningTotal / workingArray[nextIndex]
-            break;
-          }
-        }
+        // Iterate over workingArray
 
         return runningTotal
       }
@@ -202,34 +168,9 @@
           
           updateDisplay(input, displayValue)
 
+          // After display is updated, create logic to add data to workingArray
           if (isNumber === false) {
-            switch (input) {
-              case dot:
-                // Do nothing
-              break
-              case ac:
-                // If AC, delete working numbers array and update display
-                workingArray = []
-              break
-              case equals:
-                // If equals, run method to find final total
-                workingArray.push(displayValue)
-                const total = findTotal()
-                workingArray = []
-                display.value = total
-              break
-              default:
-                // Add our finished number to our array of working numbers
-                workingArray.push(displayValue)
-
-                // Clear the display and add the operations character
-                display.value = null
-                display.value = characters[input]
-
-                // Add our input to the workingArray
-                workingArray.push(input)
-              break
-            }
+            workingArray.push(input)
           }       
         })
       }
