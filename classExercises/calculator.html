@@ -142,17 +142,51 @@
 
         // If we have an operation, clear the display and show our operation
         if (isNumber === false) {
-          // Handle the operations here
-          display.value = `TODO: ADD SUPPORT FOR ${input} CHARACTER`
+          // For mathematical operators, replace the display with the appropriate symbol
+          switch (input) {
+            case 'plus':
+            case 'minus':
+            case 'multiply':
+            case 'divide':
+              display.value = characters[input]
+            break
+            // For ac, replace the display with 0
+            case ac:
+              display.value = 0
+            break
+            // For decimal, we want to add the dot to what is currently in the display
+            case dot:
+              display.value = display.value + '.'
+            break
+            case equals:
+              // Do nothing
+            break
+          }
         }  
       }
 
       // Parse workingArray and perform calculations
       function findTotal() {
-        let runningTotal = 0
+        let runningTotal = workingArray[0]
 
-        // Iterate over workingArray
-
+        for (let i = 1; i < workingArray.length; i += 2) {
+          const nextIndex = i + 1
+          const targetMathematicalOperation = workingArray[i]
+          switch (targetMathematicalOperation) {
+            case 'plus':
+              runningTotal = runningTotal + workingArray[nextIndex]
+            break
+            case 'minus':
+              runningTotal = runningTotal - workingArray[nextIndex]
+            break
+            case 'multiply':
+              runningTotal = runningTotal * workingArray[nextIndex]
+            break
+            case 'divide':
+              runningTotal = runningTotal / workingArray[nextIndex]
+            break
+          }
+        }
         return runningTotal
       }
 
@@ -170,8 +204,29 @@
 
           // After display is updated, create logic to add data to workingArray
           if (isNumber === false) {
-            workingArray.push(input)
+          // For mathematical operators, push our number to the array
+          switch (input) {
+            case 'plus':
+            case 'minus':
+            case 'multiply':
+            case 'divide':
+              workingArray.push(displayValue, input)
+            break
+            case ac:
+              workingArray = []
+            break
+            case dot:
+              // Do nothing
+            break
+            case equals:
+              workingArray.push(displayValue)
+              display.value = findTotal()
+              workingArray = []
+            break
+          }
+
           }       
+          console.log(workingArray)
         })
       }
 
